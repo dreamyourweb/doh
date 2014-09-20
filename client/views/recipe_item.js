@@ -14,5 +14,8 @@ Template.recipe_item.helpers({
 		} else {
 			return undefined;
 		}
+	},
+	beerGlass: function(){
+		// BeerGlasses.find();
 	}
 });
