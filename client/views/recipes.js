@@ -1,12 +1,13 @@
 Template.recipes.helpers({
 	recipes: function(){
-		return Recipes.find( { receptomschrijving: /Session.get("recipesSearch")/i } );
+		regex_string = new RegExp(".*" + Session.get("recipesSearch") + ".*", "i");
+		return Recipes.find( { receptomschrijving: regex_string } );
 	}
 });
 
 Template.recipes.events({
 	'submit #searchRecipeForm': function(event){
-		Session.set("recipesSearch", r);
+		Session.set("recipesSearch", $("#searchRecipeField").val());
 		event.preventDefault();
 	}
 });
