@@ -6,5 +6,13 @@ Template.recipe_item.helpers({
 			return "http://placehold.it/200x200";
 		}
 
+	},
+	randomBeer: function(){
+		beers = Session.get("beers");
+		if (beers){
+			return beers[Math.floor(Math.random()*beers.length)];
+		} else {
+			return undefined;
+		}
 	}
 });

@@ -1,14 +1,18 @@
 Template.recipes.helpers({
 	recipes: function(){
-		return Session.get("recipes");
+		return Recipes.find( { receptomschrijving: /Session.get("recipesSearch")/i } );
 	}
-})
+});
 
 Template.recipes.events({
 	'submit #searchRecipeForm': function(event){
-		Meteor.call('findRecipes', $("#searchRecipeField").val(), function (e,r){
-			Session.set("recipes", r);
-		});
+		Session.set("recipesSearch", r);
 		event.preventDefault();
 	}
-})
+});
+
+Template.recipes.rendered = function(){
+	Meteor.call('findRandomBeers', function (e,r) {
+		Session.set("beers", r);
+	});
+}
