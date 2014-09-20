@@ -10,4 +10,5 @@ iron:router
 mizzao:bootstrap-3
 http
 dburles:collection-helpers
+wizonesolutions:underscore-string
 
