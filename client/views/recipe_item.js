@@ -15,7 +15,19 @@ Template.recipe_item.helpers({
 			return undefined;
 		}
 	},
-	beerGlass: function(){
-		// BeerGlasses.find();
+
+	prettyBeerTypes: function(){
+		return _.str.capitalize(_.toSentence(this.recommendedBeerTypes()));
+	},
+
+	recommendedBeers: function(){
+		beers = [];
+		this.recommendedBeerTypes().forEach(function(beer_type){
+			beer = _.sample(Beers.find( { bierType: beer_type } ).fetch());
+			if (beer) {
+				beers.push(beer);
+			}
+		});
+		return beers;
 	}
 });

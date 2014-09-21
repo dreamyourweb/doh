@@ -1,0 +1,14 @@
+<template name="beer_item">
+	<div class="beer_item">
+		<h5>{{artikelomschrijving}}</h5>
+		<img src="{{image_url}}" class="beer-image">
+		<div class='clearfix'></div>
+		<a href="#" tabindex="0" class="btn btn-sm beer-glass-popover" data-toggle="popover" data-trigger="focus" title="{{artikelomschrijving}} recommended glass" data-content="
+			<a href='{{recommendedGlass.link_url}}' target='_blank'>
+	    		<img src='{{recommendedGlass.image_url}}'>
+	    		<p>View on BOL.com</p>
+	   		<a>">
+	   		Recommended glass
+	   	</a>
+	</div>
+</template>

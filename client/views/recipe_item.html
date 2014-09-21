@@ -5,7 +5,12 @@
 	  	</div>
 	  	<div class="media-body">
 	    	<h4 class="media-heading">{{receptomschrijving}}</h4>
-	    	<p>{{recommendedBeer}}</p>
+	    	<p><span>Recommended beer types:</span> {{prettyBeerTypes}}</p>
+
+	    	{{#each recommendedBeers}}
+	    		{{>beer_item}}
+	    	{{/each}}
+
 	  	</div>
 	</div>
 </template>

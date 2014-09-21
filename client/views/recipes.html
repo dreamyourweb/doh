@@ -26,9 +26,13 @@
 
 	<div class="row">
 		<div class="col-md-12">
-			{{#each recipes}}
-				{{>recipe_item}}
-			{{/each}}
+			<ul class="list-group">
+				{{#each recipes}}
+					<li class="list-group-item">
+						{{>recipe_item}}
+					</li>
+				{{/each}}
+			</ul>
 		</div>
 	</div>
 

@@ -1,4 +1,12 @@
 .recipe-image{
-	width: 100px;
+	width: 200px;
+	height: 200px;
+}
+
+.beer_item{
+	float: left;
+}
+
+.beer-image{
 	height: 100px;
 }

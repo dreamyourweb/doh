@@ -11,9 +11,3 @@ Template.recipes.events({
 		event.preventDefault();
 	}
 });
-
-Template.recipes.rendered = function(){
-	Meteor.call('findRandomBeers', function (e,r) {
-		Session.set("beers", r);
-	});
-}
